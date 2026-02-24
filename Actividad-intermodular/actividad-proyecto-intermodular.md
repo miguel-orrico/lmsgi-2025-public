@@ -16,7 +16,7 @@
 ---
 
 >[!NOTE]
-> Si no estás matriculado de Proyecto Intermodular, **esta actividad sigue siendo obligatoria**. Consulta la sección de Preguntas Frecuentes al final (pregunta: "¿No estoy matriculado en Proyecto Intermodular?") donde encontrarás un **diseño de base de datos mínimo de ejemplo** (sistema de reservas de mostradores de facturación AENA) que podrás usar para completar la actividad sin necesidad de haber diseñado tu propia base de datos. Es importante que antes de ponerte a hacer esta actividad hayas leído los contenidos de la unidad, en especial el punto donde se documenta con **swagger-ui** la API REST de ejemplo, para entender el formato y la estructura que se espera en tu entrega.
+> Es importante que antes de ponerte a hacer esta actividad hayas leído los contenidos delvarcho [Apuntes JSON](./JSON.md), en especial el punto donde se documenta con **swagger-ui** la API REST de ejemplo, para entender el formato y la estructura que se espera en tu entrega.
 
 ## 1. Introducción: Del Monolito a las Aplicaciones Modernas
 
