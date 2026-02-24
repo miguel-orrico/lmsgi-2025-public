@@ -10,10 +10,11 @@ Este repositorio contiene los materiales necesarios para la realización de la p
 
 **Materiales de la actividad intermodular:**
 
-- 📄 [Actividad: Diseño de API REST para Proyecto Intermodular](./UP09/actividad-proyecto-intermodular.md)
-- 📄 [Ejemplo de análisis de dominio](./UP09/ejemplo-analisis-dominio.md)
-- 📄 [Base de datos mínima de ejemplo (para alumnos sin Proyecto Intermodular)](./UP09/ejemplo-bbdd-minima.md)
-- 📄 [Ejemplo de spec OpenAPI: API Restaurante v1](./UP09/api-restaurante-v1.yaml)
+- 📄 [Apuntes JSON](./Actividad-intermodular/JSON.md)
+- 📄 [Actividad: Diseño de API REST para Proyecto Intermodular](./Actividad-intermodular/actividad-proyecto-intermodular.md)
+- 📄 [Ejemplo de análisis de dominio](./Actividad-intermodular/ejemplo-analisis-dominio.md)
+- 📄 [Base de datos mínima de ejemplo (para alumnos sin Proyecto Intermodular)](./Actividad-intermodular/ejemplo-bbdd-minima.md)
+- 📄 [Ejemplo de spec OpenAPI: API Restaurante v1](./Actividad-intermodular/api-restaurante-v1.yaml)
 
 ---
 
