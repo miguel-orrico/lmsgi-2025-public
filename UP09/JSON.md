@@ -1,4 +1,4 @@
-# UP09: Gestión de la Información - RSS, JSON, YAML y OpenAPI
+# Gestión de la Información - JSON, YAML y OpenAPI
 
 ## Índice
 
@@ -6,26 +6,22 @@
   - [1.1. Contexto: Intercambio de Datos en la Web Moderna](#11-contexto-intercambio-de-datos-en-la-web-moderna)
   - [1.2. Evolución: De Páginas Estáticas a APIs](#12-evolución-de-páginas-estáticas-a-apis)
   - [1.3. Alcance de Esta Unidad](#13-alcance-de-esta-unidad)
-- [2. RSS - Sindicación de Contenidos](#2-rss---sindicación-de-contenidos)
-  - [2.1. ¿Qué es RSS?](#21-qué-es-rss)
-  - [2.2. Estructura Básica de un Feed RSS](#22-estructura-básica-de-un-feed-rss)
-  - [2.3. Tutorial Completo](#23-tutorial-completo)
-- [3. JSON - Notación de Objetos JavaScript](#3-json---notación-de-objetos-javascript)
-  - [3.1. ¿Qué es JSON?](#31-qué-es-json)
-  - [3.2. Sintaxis y Tipos de Datos](#32-sintaxis-y-tipos-de-datos)
-  - [3.3. JSON vs XML: Comparativa](#33-json-vs-xml-comparativa)
-  - [3.4. Validación JSON](#34-validación-json)
-  - [3.5. JSON en el Mundo Real](#35-json-en-el-mundo-real)
-  - [3.6. Conversión entre JSON y XML](#36-conversión-entre-json-y-xml)
-  - [3.7. YAML - Sintaxis Básica para OpenAPI](#37-yaml---sintaxis-básica-para-openapi)
-- [4. OpenAPI / Swagger - Documentación de APIs](#4-openapi--swagger---documentación-de-apis)
-  - [4.1. APIs REST: Conceptos Fundamentales](#41-apis-rest-conceptos-fundamentales)
-  - [4.2. De Swagger a OpenAPI](#42-de-swagger-a-openapi)
-  - [4.3. Estructura de un Documento OpenAPI 3.0](#43-estructura-de-un-documento-openapi-30)
-  - [4.4. Herramientas del Ecosistema](#44-herramientas-del-ecosistema)
-  - [4.5. Casos de Uso Reales](#45-casos-de-uso-reales)
-  - [4.6. Leer una Spec OpenAPI: Ejemplo Guiado](#46-leer-una-spec-openapi-ejemplo-guiado)
-  - [4.7. Crear tu Propia Spec: Ejemplo Guiado](#47-crear-tu-propia-spec-ejemplo-guiado)
+- [2. JSON - Notación de Objetos JavaScript](2-json---notación-de-objetos-javascript)
+  - [2.1. ¿Qué es JSON?](#21-qué-es-json)
+  - [2.2. Sintaxis y Tipos de Datos](#22-sintaxis-y-tipos-de-datos)
+  - [2.3. JSON vs XML: Comparativa](#23-json-vs-xml-comparativa)
+  - [2.4. Validación JSON](#24-validación-json)
+  - [2.5. JSON en el Mundo Real](#25-json-en-el-mundo-real)
+  - [2.6. Conversión entre JSON y XML](#26-conversión-entre-json-y-xml)
+  - [2.7. YAML - Sintaxis Básica para OpenAPI](#27-yaml---sintaxis-básica-para-openapi)
+- [3. OpenAPI / Swagger - Documentación de APIs](#3-openapi--swagger---documentación-de-apis)
+  - [3.1. APIs REST: Conceptos Fundamentales](#31-apis-rest-conceptos-fundamentales)
+  - [3.2. De Swagger a OpenAPI](#32-de-swagger-a-openapi)
+  - [3.3. Estructura de un Documento OpenAPI 3.0](#33-estructura-de-un-documento-openapi-30)
+  - [3.4. Herramientas del Ecosistema](#34-herramientas-del-ecosistema)
+  - [3.5. Casos de Uso Reales](#35-casos-de-uso-reales)
+  - [3.6. Leer una Spec OpenAPI: Ejemplo Guiado](#36-leer-una-spec-openapi-ejemplo-guiado)
+  - [3.7. Crear tu Propia Spec: Ejemplo Guiado](#37-crear-tu-propia-spec-ejemplo-guiado)
 - [5. Resumen](#5-resumen)
 - [6. Evaluación](#6-evaluación)
   - [6.1. Contenidos Evaluables](#61-contenidos-evaluables)
@@ -64,92 +60,15 @@ Aun así, en términos globales, la **mayor parte de la web sigue funcionando co
 
 En esta unidad veremos cuatro tecnologías clave para la gestión moderna de información:
 
-1. **RSS**: Sindicación de contenidos para blogs, podcasts y noticias
-2. **JSON**: El formato de intercambio de datos más utilizado en la web actual
-3. **YAML**: Formato de configuración altamente legible usado en OpenAPI y DevOps
-4. **OpenAPI/Swagger**: Estándar para documentar APIs REST de forma profesional
-
->[!NOTE]
-> Las transformaciones XSLT las tienes en UP08-ampliacion.md como contenido opcional no evaluable.
+1. **JSON**: El formato de intercambio de datos más utilizado en la web actual
+2. **YAML**: Formato de configuración altamente legible usado en OpenAPI y DevOps
+3. **OpenAPI/Swagger**: Estándar para documentar APIs REST de forma profesional
 
 ---
 
-## 2. RSS - Sindicación de Contenidos
+## 2. JSON - Notación de Objetos JavaScript
 
-### 2.1. ¿Qué es RSS?
-
-**RSS** (Really Simple Syndication o Rich Site Summary) es un formato basado en **XML** que permite distribuir contenido actualizado de forma automática. Los usuarios pueden suscribirse a un "feed" RSS y recibir notificaciones cuando hay contenido nuevo, sin tener que visitar la web manualmente.
-
-**Casos de uso comunes:**
-
-- Blogs y sitios de noticias
-- Podcasts
-- Actualizaciones de software
-- Boletines y newsletters
-
-### 2.2. Estructura Básica de un Feed RSS
-
-Un documento RSS es un archivo XML con una estructura específica:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-  <channel>
-    <title>Blog de Tecnología LMSGI</title>
-    <link>https://ejemplo.com</link>
-    <description>Artículos sobre desarrollo web y APIs</description>
-    <language>es-ES</language>
-
-    <item>
-      <title>Introducción a OpenAPI</title>
-      <link>https://ejemplo.com/openapi-intro</link>
-      <description>Aprende a documentar tus APIs con OpenAPI 3.0</description>
-      <pubDate>Wed, 12 Feb 2026 10:00:00 GMT</pubDate>
-      <guid>https://ejemplo.com/openapi-intro</guid>
-    </item>
-
-    <item>
-      <title>JSON vs XML: ¿Cuál elegir?</title>
-      <link>https://ejemplo.com/json-vs-xml</link>
-      <description>Comparativa entre los dos formatos de datos</description>
-      <pubDate>Mon, 10 Feb 2026 08:30:00 GMT</pubDate>
-      <guid>https://ejemplo.com/json-vs-xml</guid>
-    </item>
-  </channel>
-</rss>
-```
-
-**Elementos principales:**
-
-| Elemento | Descripción |
-| -------- | ----------- |
-| `<channel>` | Contenedor principal del feed |
-| `<title>` | Título del canal o artículo |
-| `<link>` | URL del sitio o artículo |
-| `<description>` | Descripción breve del contenido |
-| `<item>` | Cada entrada individual (artículo, episodio, etc.) |
-| `<pubDate>` | Fecha de publicación en formato RFC 822 |
-| `<guid>` | Identificador único del artículo |
-
-### 2.3. Tutorial Completo
-
-Para profundizar en RSS, consulta el tutorial completo de Eniun:
-
-**[Tutorial RSS - Sindicación de Contenidos](https://www.eniun.com/tutorial-rss/)**
-
-El tutorial cubre:
-
-- Estructura detallada de feeds RSS 2.0
-- Elementos opcionales (`category`, `enclosure`, `author`)
-- Validación de feeds
-- Lectores RSS populares
-- Creación de feeds personalizados
-
----
-
-## 3. JSON - Notación de Objetos JavaScript
-
-### 3.1. ¿Qué es JSON?
+### 2.1. ¿Qué es JSON?
 
 **JSON** (JavaScript Object Notation) es un formato ligero de intercambio de datos, fácil de leer para humanos y fácil de parsear para máquinas. Aunque nació como parte de JavaScript, es completamente **independiente del lenguaje** y se utiliza en prácticamente todos los lenguajes de programación modernos.
 
@@ -160,14 +79,14 @@ El tutorial cubre:
 - **Compatibilidad nativa**: JavaScript puede parsear JSON sin librerías adicionales
 - **Amplia adopción**: Estándar de facto en APIs REST
 
-### 3.2. Sintaxis y Tipos de Datos
+### 2.2. Sintaxis y Tipos de Datos
 
 JSON soporta **6 tipos de datos**: 4 tipos primitivos y 2 tipos estructurados.
 
 >[!NOTE]
 > Pégale un vistazo a esta web [https://jsoncrack.com/editor](https://jsoncrack.com/editor) para experimentar con JSON de forma visual e interactiva. 100% recomendado para entender la estructura de datos JSON.
 
-#### 3.2.1. Tipos Primitivos
+#### 2.2.1. Tipos Primitivos
 
 ```json
 {
@@ -185,7 +104,7 @@ JSON soporta **6 tipos de datos**: 4 tipos primitivos y 2 tipos estructurados.
 | **Boolean** | `true`, `false` | Minúsculas, sin comillas |
 | **Null** | `null` | Representa ausencia de valor |
 
-#### 3.2.2. Tipos Estructurados
+#### 2.2.2. Tipos Estructurados
 
 **Array (lista ordenada):**
 
@@ -209,7 +128,7 @@ JSON soporta **6 tipos de datos**: 4 tipos primitivos y 2 tipos estructurados.
 }
 ```
 
-#### 3.2.3. Estructuras Anidadas
+#### 2.2.3. Estructuras Anidadas
 
 JSON permite anidar objetos y arrays indefinidamente:
 
@@ -247,7 +166,7 @@ JSON permite anidar objetos y arrays indefinidamente:
 
 En este ejemplo, tenemos un objeto `restaurante` que contiene otro objeto `ubicacion`, un array de objetos `platos` y un array de números `valoraciones`. `precio` es por ejemplo una propiedad de tipo `number` del objeto `plato`.
 
-### 3.3. JSON vs XML: Comparativa
+### 2.3. JSON vs XML: Comparativa
 
 Veamos el **mismo dato** representado en ambos formatos:
 
@@ -300,16 +219,16 @@ En este ejemplo vemos que ambas tecnologías sirven para representar la misma in
 | **Validación** | JSON Schema | DTD, XSD (más potentes) |
 | **Uso principal** | APIs REST, configuración | Documentos complejos, SOAP |
 
-### 3.4. Validación JSON
+### 2.4. Validación JSON
 
 Aunque JSON no tiene comentarios ni DTD como XML, podemos validar su estructura usando:
 
-#### 3.4.1. Validadores Online
+#### 2.4.1. Validadores Online
 
 - **[JSONLint](https://jsonlint.com/)**: Valida sintaxis y formatea JSON
 - **[JSONFormatter](https://jsonformatter.org/)**: Validación y visualización en árbol
 
-#### 3.4.2. JSON Schema
+#### 2.4.2. JSON Schema
 
 **JSON Schema** es a JSON lo que DTD/XSD es a XML: un formato para describir y validar la estructura de datos JSON. Es una herramienta poderosa para garantizar que los datos cumplen con un formato específico, especialmente útil en APIs REST para validar solicitudes y respuestas.
 
@@ -341,9 +260,9 @@ Aunque JSON no tiene comentarios ni DTD como XML, podemos validar su estructura 
 > [!NOTE]
 > JSON Schema standalone (fuera de OpenAPI) es contenido de ampliación no evaluable. Sin embargo, **sí es evaluable** el uso de JSON Schema dentro de OpenAPI para definir modelos de datos en `components/schemas`, ya que es fundamental para documentar APIs. Veremos esto en detalle en la sección de OpenAPI.
 
-### 3.5. JSON en el Mundo Real
+### 2.5. JSON en el Mundo Real
 
-#### 3.5.1. APIs REST
+#### 2.5.1. APIs REST
 
 El 99% de las APIs REST modernas devuelven datos en formato JSON:
 
@@ -362,7 +281,7 @@ GET https://api.ejemplo.com/usuarios/123
 }
 ```
 
-#### 3.5.2. Archivos de Configuración
+#### 2.5.2. Archivos de Configuración
 
 Muchas herramientas usan JSON para configuración:
 
@@ -391,19 +310,19 @@ Muchas herramientas usan JSON para configuración:
 }
 ```
 
-#### 3.5.3. Almacenamiento de Datos
+#### 2.5.3. Almacenamiento de Datos
 
 Bases de datos NoSQL como **MongoDB** almacenan documentos en formato similar a JSON (BSON). BSON, *binary JSON*, es una extensión binaria de JSON que permite tipos adicionales (como fechas y objetos binarios). Para más información, consulta [BSON en Wikipedia](https://en.wikipedia.org/wiki/BSON)
 
-### 3.6. Conversión entre JSON y XML
+### 2.6. Conversión entre JSON y XML
 
 Para profundizar en la conversión bidireccional entre JSON y XML, consulta:
 
 **[Tutorial JSON - Conversión a XML y viceversa](https://www.eniun.com/tutorial-json/)**
 
-### 3.7. YAML - Sintaxis Básica para OpenAPI
+### 2.7. YAML - Sintaxis Básica para OpenAPI
 
-#### 3.7.1. ¿Qué es YAML?
+#### 2.7.1. ¿Qué es YAML?
 
 **YAML** (YAML Ain't Markup Language) es un formato de serialización de datos diseñado para ser **extremadamente legible por humanos**. Se utiliza principalmente en archivos de configuración y especificaciones de APIs (como OpenAPI/Swagger).
 
@@ -425,7 +344,7 @@ Cómo hemos comentado, YAML es el formato preferido para:
 - Kubernetes (configuración de pods, servicios)
 - Ansible (playbooks de automatización)
 
-#### 3.7.2. Sintaxis Fundamental
+#### 2.7.2. Sintaxis Fundamental
 
 ##### Pares Clave-Valor
 
@@ -580,7 +499,7 @@ resumen: >
   pero se une en una sola.
 ```
 
-#### 3.7.3. Tipos de Datos
+#### 2.7.3. Tipos de Datos
 
 YAML soporta los mismos tipos básicos que JSON, pero con sintaxis más flexible:
 
@@ -595,7 +514,7 @@ YAML soporta los mismos tipos básicos que JSON, pero con sintaxis más flexible
 | **Array** | `tags: [web, api]` | `"tags": ["web", "api"]` |
 | **Object** | `config: {debug: true}` | `"config": {"debug": true}` |
 
-#### 3.7.4. YAML vs JSON: Comparativa
+#### 2.7.4. YAML vs JSON: Comparativa
 
 Veamos el **mismo dato** en ambos formatos:
 
@@ -674,7 +593,7 @@ libreria:
 | **Curva de aprendizaje** | Media (indentación sensible) | Baja (sintaxis simple) |
 | **Parsing** | Más lento | Más rápido (nativo en JS) |
 
-#### 3.7.5. ¿Por Qué OpenAPI Usa YAML?
+#### 2.7.5. ¿Por Qué OpenAPI Usa YAML?
 
 Aunque OpenAPI soporta tanto YAML como JSON, **YAML es el formato preferido** por:
 
@@ -748,7 +667,7 @@ paths:
 }
 ```
 
-#### 3.7.6. Validación y Herramientas
+#### 2.7.6. Validación y Herramientas
 
 **Validadores Online:**
 
@@ -780,7 +699,7 @@ paths:
    respuesta: "yes"
    ```
 
-#### 3.7.7. Resumen: ¿Cuándo Usar YAML?
+#### 2.7.7. Resumen: ¿Cuándo Usar YAML?
 
 **Usa YAML para:**
 
@@ -799,17 +718,17 @@ paths:
 
 ---
 
-## 4. OpenAPI / Swagger - Documentación de APIs
+## 3. OpenAPI / Swagger - Documentación de APIs
 
-### 4.1. APIs REST: Conceptos Fundamentales
+### 3.1. APIs REST: Conceptos Fundamentales
 
 Antes de hablar de OpenAPI, necesitamos entender qué es una **API REST**.
 
-#### 4.1.1. ¿Qué es una API?
+#### 3.1.1. ¿Qué es una API?
 
 **API** (Application Programming Interface) es un contrato que define cómo dos sistemas se comunican entre sí. En el contexto web, una API permite que aplicaciones cliente soliciten datos o acciones a un servidor mediante HTTP.
 
-#### 4.1.2. ¿Qué es REST?
+#### 3.1.2. ¿Qué es REST?
 
 **REST** (Representational State Transfer) es un estilo arquitectónico para diseñar APIs que usa:
 
@@ -818,7 +737,7 @@ Antes de hablar de OpenAPI, necesitamos entender qué es una **API REST**.
 - **Respuestas en formato estándar**: JSON (principalmente)
 - **Sin estado (stateless)**: Cada petición es independiente
 
-#### 4.1.3. Métodos HTTP (Verbos)
+#### 3.1.3. Métodos HTTP (Verbos)
 
 Nota: Idempotencia significa que hacer la misma petición varias veces tiene el mismo efecto que hacerla una sola vez.
 
@@ -832,7 +751,7 @@ Nota: Idempotencia significa que hacer la misma petición varias veces tiene el 
 
 > ***Idempotente:** Hacer la misma petición múltiples veces produce el mismo resultado que hacerla una sola vez.
 
-#### 4.1.4. Códigos de Respuesta HTTP
+#### 3.1.4. Códigos de Respuesta HTTP
 
 | Código | Significado | Uso típico |
 | ------ | ----------- | ---------- |
@@ -845,11 +764,11 @@ Nota: Idempotencia significa que hacer la misma petición varias veces tiene el 
 | **404** | Not Found | Recurso no encontrado |
 | **500** | Internal Server Error | Error en el servidor |
 
-### 4.2. De Swagger a OpenAPI
+### 3.2. De Swagger a OpenAPI
 
 Swagger fue la primera herramienta popular para documentar APIs REST, pero con el tiempo evolucionó y se estandarizó bajo el nombre de OpenAPI Specification (OAS). Muchas personas (entre las que me incluyo) siguen usando "Swagger" como sinónimo de OpenAPI, pero es importante entender la diferencia.
 
-#### 4.2.1. Historia
+#### 3.2.1. Historia
 
 Una breve cronología de la evolución de Swagger a OpenAPI:
 
@@ -858,7 +777,7 @@ Una breve cronología de la evolución de Swagger a OpenAPI:
 - **2016**: Swagger pasa a llamarse oficialmente **OpenAPI Specification (OAS)**
 - **2017**: Lanzamiento de **OpenAPI 3.0** (versión moderna)
 
-#### 4.2.2. Terminología Actual
+#### 3.2.2. Terminología Actual
 
 ¿Pero no habías dicho que Swagger es la nomenclatura antigua? Sí, pero el ecosistema de herramientas sigue usando el nombre "Swagger" para referirse a sus productos. Por eso es común que se hable de "Swagger UI" o "Swagger Editor" aunque la especificación se llame OpenAPI.
 
@@ -871,11 +790,11 @@ Una breve cronología de la evolución de Swagger a OpenAPI:
 
 > **En resumen:** "OpenAPI" es la especificación, "Swagger" son las herramientas del ecosistema. Aunque a menudo se usan indistintamente, es importante entender esta distinción para evitar confusiones.
 
-### 4.3. Estructura de un Documento OpenAPI 3.0
+### 3.3. Estructura de un Documento OpenAPI 3.0
 
 Una especificación OpenAPI es un archivo YAML (o JSON) que describe toda la API de forma declarativa.
 
-#### 4.3.1. Ejemplo Básico Completo
+#### 3.3.1. Ejemplo Básico Completo
 
 Este ejemplo muestra una **API de librería online** completamente documentada en OpenAPI 3.0. La API permite gestionar un catálogo de libros con operaciones de lectura, creación y eliminación.
 
@@ -1044,7 +963,7 @@ components:
           default: true
 ```
 
-#### 4.3.2. Secciones Principales
+#### 3.3.2. Secciones Principales
 
 **1. Metadata (`openapi`, `info`):**
 
@@ -1109,7 +1028,7 @@ components:
           maxLength: 100
 ```
 
-#### 4.3.3. Parámetros
+#### 3.3.3. Parámetros
 
 Los parámetros pueden estar en diferentes ubicaciones:
 
@@ -1141,7 +1060,7 @@ GET /usuarios/42?page=2
 Header: X-API-Key: abc123xyz
 ```
 
-#### 4.3.4. Request Body
+#### 3.3.4. Request Body
 
 Para POST y PUT, definimos el cuerpo de la petición:
 
@@ -1159,7 +1078,7 @@ requestBody:
         stock: 15
 ```
 
-#### 4.3.5. Responses
+#### 3.3.5. Responses
 
 Cada operación debe documentar sus posibles respuestas:
 
@@ -1183,9 +1102,9 @@ responses:
               example: "Producto con ID 999 no existe"
 ```
 
-### 4.4. Herramientas del Ecosistema
+### 3.4. Herramientas del Ecosistema
 
-#### 4.4.1. Swagger Editor
+#### 3.4.1. Swagger Editor
 
 **URL:** [https://editor.swagger.io/](https://editor.swagger.io/)
 
@@ -1202,7 +1121,7 @@ Editor online que:
 2. Observa errores en rojo (si los hay)
 3. Visualiza la documentación en el panel derecho
 
-#### 4.4.2. Swagger UI
+#### 3.4.2. Swagger UI
 
 Interfaz web interactiva que renderiza tu spec OpenAPI como documentación navegable. Permite:
 
@@ -1229,7 +1148,7 @@ Responses:
 [Try it out] [Execute]
 ```
 
-#### 4.4.3. Swagger Codegen
+#### 3.4.3. Swagger Codegen
 
 Genera código automáticamente desde una spec OpenAPI:
 
@@ -1239,7 +1158,7 @@ Genera código automáticamente desde una spec OpenAPI:
 
 Esto acelera el desarrollo porque no tienes que escribir el código "boilerplate" manualmente.
 
-#### 4.4.4. Ejemplo Interactivo: Swagger Petstore
+#### 3.4.4. Ejemplo Interactivo: Swagger Petstore
 
 **URL:** [https://petstore.swagger.io/](https://petstore.swagger.io/)
 
@@ -1304,7 +1223,7 @@ GET  /user/login       → Login de usuario
 
 Como puedes observar, la expresividad de OpenAPI combinada con la interactividad de Swagger UI es una herramienta poderosa para mejorar la comunicación entre equipos y facilitar el consumo de APIs. Es una práctica estándar en la industria y un requisito común en muchos procesos de desarrollo.
 
-#### 4.4.5. Generación Automática: Design-First vs Code-First
+#### 3.4.5. Generación Automática: Design-First vs Code-First
 
 **Contexto importante:**
 
@@ -1477,11 +1396,11 @@ Como siempre, depende del contexto y las necesidades de tu proyecto, pero genera
 - **Swashbuckle (.NET):** [https://github.com/domaindrivendev/Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
 - **OpenAPI Generator:** [https://openapi-generator.tech/](https://openapi-generator.tech/) (genera código desde specs)
 
-### 4.5. Casos de Uso Reales
+### 3.5. Casos de Uso Reales
 
 Sección de ampliación para mostrar ejemplos concretos de cómo OpenAPI mejora la documentación, testing y validación en proyectos reales.
 
-#### 4.5.1. Documentación de Equipos
+#### 3.5.1. Documentación de Equipos
 
 **Escenario:** Empresa con frontend y backend separados
 
@@ -1492,7 +1411,7 @@ Sección de ampliación para mostrar ejemplos concretos de cómo OpenAPI mejora 
   - Swagger UI sirve de documentación interactiva
   - Cualquier cambio en la spec se detecta inmediatamente
 
-#### 4.5.2. Testing Automatizado
+#### 3.5.2. Testing Automatizado
 
 Herramientas como **Dredd** o **Postman** pueden:
 
@@ -1500,7 +1419,7 @@ Herramientas como **Dredd** o **Postman** pueden:
 - Generar tests automáticamente para cada endpoint
 - Validar que la API real cumple con la especificación
 
-#### 4.5.4. Validación de Contratos (Contract Testing)
+#### 3.5.4. Validación de Contratos (Contract Testing)
 
 En arquitecturas de microservicios:
 
@@ -1510,7 +1429,7 @@ En arquitecturas de microservicios:
 
 Esto evita que un cambio en un servicio rompa otros servicios sin previo aviso.
 
-### 4.6. Leer una Spec OpenAPI: Ejemplo Guiado
+### 3.6. Leer una Spec OpenAPI: Ejemplo Guiado
 
 Imagina que te dan esta spec y debes entender qué hace la API:
 
@@ -2013,16 +1932,10 @@ En cualquier caso, además de detallar el schema, tienes las responses que hemos
 
 ---
 
-## 5. Resumen
+## 4. Resumen
 
-En esta unidad hemos cubierto los pilares de la gestión moderna de información y RSS:
+En esta unidad hemos cubierto los pilares de la gestión moderna de información:
 
-### RSS (Really Simple Syndication)
-
-- Formato XML para distribuir contenido actualizado
-- Estructura basada en `<channel>` e `<item>`
-- Uso principal: blogs, podcasts, noticias
-- Permite suscripción sin visitar la web manualmente
 
 ### JSON (JavaScript Object Notation)
 
@@ -2057,73 +1970,3 @@ En esta unidad hemos cubierto los pilares de la gestión moderna de información
 - Comunicación sin estado (stateless)
 
 ---
-
-## 6. Evaluación
-
-### 6.1. Contenidos Evaluables
-
-Los siguientes contenidos son **obligatorios y evaluables**:
-
-**RSS:**
-
-- Estructura básica de un feed RSS 2.0
-- Elementos `<channel>` e `<item>`
-- Campos principales: `title`, `link`, `description`, `pubDate`, `guid`
-- Casos de uso de RSS
-
-**JSON:**
-
-- Sintaxis y tipos de datos (string, number, boolean, null, array, object)
-- Estructuras anidadas (objetos dentro de arrays, arrays dentro de objetos)
-- Comparativa JSON vs XML (ventajas/desventajas)
-- Uso de JSON en APIs REST
-- Validación de sintaxis JSON
-
-**YAML:**
-
-- Sintaxis básica (pares clave-valor, indentación, listas)
-- Tipos de datos y equivalencias con JSON
-- Objetos anidados y listas de objetos
-- Comentarios y strings multilínea
-- Comparativa YAML vs JSON
-- Por qué OpenAPI usa YAML
-- Errores comunes (tabs vs espacios, indentación)
-
-**OpenAPI / Swagger:**
-
-- Conceptos de API REST (recursos, métodos HTTP, códigos de respuesta)
-- Estructura de un documento OpenAPI 3.0
-- Secciones principales: `info`, `servers`, `paths`, `components/schemas`
-- Definición de endpoints (operaciones GET, POST, PUT, DELETE)
-- Parámetros (path, query, header)
-- Request body y responses
-- Referencias `$ref` a componentes
-- **Lectura e interpretación** de una spec OpenAPI existente
-- **Creación** de una spec OpenAPI básica
-
-**JSON Schema (en contexto de OpenAPI):**
-
-- Definición de schemas en `components/schemas`
-- Tipos de datos: `string`, `number`, `integer`, `boolean`, `array`, `object`
-- Propiedades obligatorias: `required`
-- Validaciones básicas:
-  - Strings: `minLength`, `maxLength`, `pattern`, `format`, `enum`
-  - Numbers: `minimum`, `maximum`
-  - Arrays: `items` (para definir tipo de elementos)
-- Propiedades de objeto: `properties`
-- Ejemplos: `example`
-
-### 6.2. Contenidos NO Evaluables
-
-Los siguientes contenidos son **opcionales y no evaluables**. Ampliación:
-
-- **XSLT** (transformaciones XML) - Ampliación de UP08
-- **XSD** (esquemas XML avanzados) - Ampliación de UP08
-- **JSON Schema avanzado** (fuera de OpenAPI):
-  - Uso standalone de JSON Schema
-  - Validaciones complejas: `allOf`, `anyOf`, `oneOf`, `not`
-  - Schemas recursivos
-  - Custom keywords
-- **Swagger Codegen** (generación de código) - Ampliación conceptual
-- **Enfoques Design-First vs Code-First** - Conceptual, no se exige implementar
-- **Frameworks de generación automática** (FastAPI, Spring Boot, etc.) - Ampliación
