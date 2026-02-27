@@ -1,10 +1,10 @@
-# Proyecto intermodular LMSGI - CFGS DAM 1º J
+w# Proyecto intermodular LMSGI - CFGS DAM 1º J
 
 ## IES Severo Ochoa - Curso 2025-26
 
 ## Tercera Evaluación
 
-Este repositorio contiene los materiales necesarios para la realización de la parte de intercambio de información en el **proyecto intermodular** para el Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM).
+Este repositorio contiene los materiales necesarios para la realización de la parte de intercambio de información en el **proyecto intermodular** para el Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web (DAW).
 
 ---
 
