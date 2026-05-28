@@ -1,4 +1,4 @@
-w# Proyecto intermodular LMSGI - CFGS DAM 1º J
+# Proyecto intermodular LMSGI - CFGS DAM 1º J
 
 ## IES Severo Ochoa - Curso 2025-26
 
