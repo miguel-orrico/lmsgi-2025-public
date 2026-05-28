@@ -14,7 +14,7 @@ Antes de empezar, elige una temática para tu sitio web, por ejemplo: **educaci�
 
 Para evitar cambios en el menú de opciones y asegurarnos de que trabajamos con el **editor de bloques predeterminado de WordPress**, en un primer momento utilizaremos la plantilla predeterminada de WordPress, que en la versión actual es "Twenty Twenty-Five".
 
-Como la web se trabajará en local, no será publicada en internet. Por lo tanto, se entregarán **capturas de pantalla completas** de los apartados a valorar o un vídeo explicativo mostrando los ejercicios realizados de no más de 1 minuto. El contenido de la web (textos e imágenes) puede generarse con inteligencia artificial. A continuación, se explica cómo realizar capturas de página completa correctamente.
+Como la web se trabajará en local, no será publicada en internet. Por lo tanto, se entregarán **capturas de pantalla completas** de los apartados a valorar. El contenido de la web (textos e imágenes) puede generarse con inteligencia artificial. A continuación, se explica cómo realizar capturas de página completa correctamente.
 
 ### Cómo hacer la captura de página completa
 
@@ -106,7 +106,7 @@ No es preciso resolver todos los puntos rojos o naranjas, con resolver los más 
 
 ### 1.4. Entrega del ejercicio 1
 
-> **Captura de página completa en vista previa llamada `ejercicio1Tunombreyapellidos.png` o un vídeo explicativo**
+> **Captura de página completa en vista previa llamada `ejercicio1Tunombreyapellidos.png`**
 
 Haz una captura de pantalla **completa** (de todo el sitio web, bien con la herramienta de captura de pantalla del navegador o con una extensión) en vista previa de la entrada creada, asegurándose de que se vea:
 
@@ -217,58 +217,12 @@ Ejemplo
 
 ### 2.1. Entrega del ejercicio 2
 
-> **Captura de página completa llamada `ejercicio2Tunombreyapellidos.png` + vídeo breve explicativo para el reveal**
+> **Captura de página completa llamada `ejercicio2Tunombreyapellidos.png`**
+
 
 ---
 
-## Ejercicio 3: Ajustes generales, lectura, escritura, comentarios, enlaces permanentes y usuarios (NO EVALUABLE)
-
-Realiza los siguientes ajustes:
-
-1. En ajustes generales:
-   - Modifica el título y la descripción del sitio.
-   - Indica el formato de fecha y hora preferidos.
-2. En escritura:
-   - Selecciona una categoría por defecto creada por ti para las entradas.
-3. Lectura:
-   - Para cada entrada en el feed, incluir: extracto.
-   - Indica 20 entradas a mostrar en el feed xml.
-   - No permitas que se indexe la web.
-4. Configuración de comentarios:
-   - Elige la opción de requerir aprobación previa para los comentarios antes de ser publicados en tu sitio. (Comentario debe aprobarse manualmente)
-5. Enlaces permanentes:
-   - Configura la estructura de enlaces permanentes como "Nombre de la entrada".
-   - Cambia el texto base para categorías y etiquetas.
-6. Usuarios:
-   - Añade un nuevo usuario de tipo "Autor".
-
----
-
-## Ejercicio 4: Creación de un formulario con WPForms (NO EVALUABLE)
-
-Practica la creación de un formulario de contacto utilizando el plugin **WPForms Lite** en WordPress, e intégralo en una página específica y en el menú de navegación del sitio web.
-
-> **Nota sobre plugins de formularios:** El ecosistema ha evolucionado mucho. Contact Form 7 fue durante años el estándar, pero actualmente ha sido superado por alternativas más modernas. WPForms Lite (+6M instalaciones activas) es hoy la opción más recomendada para principiantes por su interfaz visual de arrastrar y soltar. Si te interesa explorar una alternativa con más funcionalidad gratuita, prueba también **Fluent Forms Free**, que además guarda las entradas del formulario en la base de datos sin coste.
-
-1. Crea un formulario de contacto:
-   - Instala y activa el plugin **WPForms Lite** desde la sección de Plugins en el Panel de Administración de WordPress.
-   - Ve a "WPForms" > "Añadir nuevo" y selecciona la plantilla "Simple Contact Form".
-   - Utiliza el constructor visual para añadir o modificar campos: nombre, email, asunto, mensaje, teléfono, etc.
-2. Personaliza el formulario:
-   - Ajusta las etiquetas, los mensajes de error y los textos de ayuda de cada campo.
-   - Configura el mensaje de confirmación que verá el usuario al enviar el formulario.
-3. Integra el formulario en una página `/contacto`:
-   - Crea una nueva página llamada "Contacto" desde "Páginas" > "Añadir Nueva".
-   - Inserta el formulario con el bloque "WPForms" del editor de bloques, o mediante el shortcode que genera el plugin.
-   - Guarda la página y verifica que el formulario se muestre correctamente en la URL "/contacto".
-4. Añade la página al menú de navegación:
-   - Ve a "Apariencia" > "Menús" en el Panel de Administración.
-   - Agrega la página "Contacto" al menú principal o al menú de navegación deseado.
-   - Guarda los cambios en el menú para que el enlace a la página de contacto aparezca en el sitio web.
-
----
-
-## Ejercicio 5: Creación de una tienda online con WooCommerce
+## Ejercicio 3: Creación de una tienda online con WooCommerce
 
 Aprende a configurar una tienda online utilizando WooCommerce en WordPress.
 
@@ -309,9 +263,9 @@ Aprende a configurar una tienda online utilizando WooCommerce en WordPress.
 - Realiza pruebas de compra para verificar que los productos se añaden al carrito y se completan las transacciones correctamente.
 - Accede a la sección de "Pedidos" en el panel de administración para gestionar tus pedidos, realizar seguimiento del inventario y ajustar configuraciones según sea necesario.
 
-### 5.1. Entrega del ejercicio 5
+### 3.1. Entrega del ejercicio 
 
-> **Captura de página completa de la página en la que se muestren los productos creados llamada `ejercicio5Tunombreyapellidos.png`. Se deben visualizar los productos creados manualmente y los creados mediante importación del CSV. También puedes entregar un vídeo explicativo**.
+> **Captura de página completa de la página en la que se muestren los productos creados llamada `ejercicio5Tunombreyapellidos.png`. Se deben visualizar los productos creados manualmente y los creados mediante importación del CSV.**.
 
 Por favor asegúrate de tomar la captura de pantalla de la página completa, tál y cómo se explicó al principio de este documento.
 
@@ -319,28 +273,3 @@ Un ejemplo mínimo de captura de pantalla lo tienes en la siguiente imagen: [Pá
 
 ---
 
-## Ejercicio 6: Personalización del tema de WordPress (NO EVALUABLE)
-
-Temática del sitio: Debes elegir una temática para tu página, como ocio, deporte, educación, etc.
-
-1. **Cambio de tema:** Selecciona un tema preinstalado o instala uno nuevo desde la sección de Temas en el Panel de Administración de WordPress. Por ejemplo, puedes instalar GeneratePress.
-2. **Personalización del tema**: Utiliza el Personalizador de WordPress para ajustar aspectos como colores, fuentes, encabezados, fondos y más.
-3. **Agregar y organizar widgets:** Arrastra y suelta los widgets disponibles en las áreas específicas de tu sitio web, como barras laterales o pies de página.
-4. **Crear y personalizar menús de navegación:** Crea un nuevo menú y asigna elementos a ubicaciones específicas en tu tema, como el menú principal o el menú de pie de página.
-
----
-
-## Ejercicio 7: Agregar un enlace al feed xml (NO EVALUABLE)
-
-Agrega un enlace a tu feed xml en tu landing page. Investiga cómo implementarlo.
-
----
-
-## Ejercicio 8: Investigación de plugins y funcionalidades (NO EVALUABLE)
-
-Selecciona un tema y realiza una explicación de cómo se hace:
-
-- Elección de un dominio, elección de hosting, instalación WordPress, certificado SSL.
-- Realización de copias de seguridad de WordPress y trasladar una web a otro sitio.
-- Modificar archivos php, css y html en WordPress desde el editor. Realización de una prueba en la que se editen esos archivos y se muestre el resultado. Cómo hacer tu propio plugin de WordPress.
-- Plugins interesantes para WordPress y formas de monetizar un sitio web.
