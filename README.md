@@ -50,6 +50,6 @@ Para dudas sobre el contenido:
 
 ---
 
-**Última actualización**: Febrero 2026
+**Última actualización**: Abril 2026
 
 **Curso**: 2025-2026
